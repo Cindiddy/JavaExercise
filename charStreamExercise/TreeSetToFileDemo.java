@@ -6,9 +6,17 @@ import java.io.IOException;
 import java.util.Comparator;
 import java.util.Scanner;
 import java.util.TreeSet;
+/*
+  Requirement:
+  1.Ask the user to input 5 students information which include student name, english score, math score and science score. 
+  2.Write all the information into a txt file, while the format should be : name, english score, math score, science score.
+  3. When writing the student information to the txt file, it shouold be in order of total score from the highest to lowest.
+*/
 
 public class TreeSetToFileDemo {
     public static void main(String[] args) throws IOException {
+        
+        //create a TreeSet to store the Student information,sort by comparator
         TreeSet<Student> ts = new TreeSet<>(new Comparator<Student>() {
             @Override
             public int compare(Student s1, Student s2) {
@@ -19,7 +27,8 @@ public class TreeSetToFileDemo {
                 return num4;
             }
         });
-
+        
+        //use for loop to get the student information for five times
         for (int i = 0; i < 5; i++) {
             Scanner sc = new Scanner(System.in);
             System.out.println("Please enter No." + (i + 1) + " student information:");
@@ -31,13 +40,15 @@ public class TreeSetToFileDemo {
             int mathScore = sc.nextInt();
             System.out.println("Science Score: ");
             int scienceScore = sc.nextInt();
-
+            
+            //creat Student and add the information
             Student s = new Student();
             s.setName(name);
             s.setEnglishScore(englishScore);
             s.setMathScore(mathScore);
             s.setScienceScore(scienceScore);
-
+          
+            //add student to TreeSet
             ts.add(s);
         }
         BufferedWriter bw=new BufferedWriter(new FileWriter("ts.txt"));
