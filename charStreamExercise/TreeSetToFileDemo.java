@@ -9,7 +9,7 @@ import java.util.TreeSet;
 /*
   Requirement:
   1.Ask the user to input 5 students information which include student name, english score, math score and science score. 
-  2.Write all the information into a txt file, while the format should be : name, english score, math score, science score.
+  2.Write all the student information into a txt file, while the format should be : name, english score, math score, science score.
   3. When writing the student information to the txt file, it shouold be in order of total score from the highest to lowest.
 */
 
