@@ -1,0 +1,7 @@
+hello
+world
+java
+I
+like
+Java
+Practice makes perfect!
